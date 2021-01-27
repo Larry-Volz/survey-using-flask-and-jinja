@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block inherited_content %}
+
+    <h5 class="card-title">{{  survey_title }}</h5>
+    <div class="card-subtitle">{{ survey_instructions}}</div>
+    <p class="card-text">
+    </p>
+    <form action="" class="form" method="POST">
+        
+        <button type="submit" class="btn btn-success m-1 mt-2">Start Survey</button>
+    </form>
+
+{% endblock %}
