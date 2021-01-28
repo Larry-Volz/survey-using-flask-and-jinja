@@ -4,10 +4,14 @@
     <h5 class="card-title">{{  survey_title }}</h5>
     <div class="card-subtitle">{{ survey_instructions}}</div>
     <p class="card-text">
+        <!-- show question[q_idx] here -->
     </p>
     <form action="" class="form" method="POST">
-        
-        <button type="submit" class="btn btn-success m-1 mt-2">Start Survey</button>
+        <!-- show choices here -->
+        number of questions = {{ num_q }}
+        <div class="row">
+            <button type="submit" class="btn btn-success m-1 mt-2">Enter</button>
+        </div>
     </form>
 
 {% endblock %}
