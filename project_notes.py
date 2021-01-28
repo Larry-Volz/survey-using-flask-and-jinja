@@ -1,4 +1,5 @@
-HOW TO ACCESS CLASS PROPERTIES
+# HOW TO ACCESS CLASS PROPERTIES
+from surveys import *
 
 for survey in surveys.values():
     print("title: ",survey.title)
