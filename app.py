@@ -22,11 +22,15 @@ for i in range(len(questions)):
 #     print(satisfaction_survey.questions.question.values())
 
 question_idx = 0
+counter = 0
 TOTAL_NUM_QUESTIONS=len(questions)
 
 
 @app.route('/')
 def survey_start_page():
+    global question_idx
+    if question_idx >= TOTAL_NUM_QUESTIONS:
+        question_idx = 0
     return render_template('index.html', survey_title=title, survey_instructions=instructions)
 
 
@@ -34,9 +38,10 @@ def survey_start_page():
 def questions_page(question_idx):
     global TOTAL_NUM_QUESTIONS
     global questions
+    print(f"question_idx: {question_idx}")
     if question_idx < TOTAL_NUM_QUESTIONS:
-        current_question=questions[question_idx]
         
+        current_question=questions[question_idx]
         return render_template('questions.html',question_idx=question_idx, current_question=current_question)
     else:
         return redirect ('/thank_you')
